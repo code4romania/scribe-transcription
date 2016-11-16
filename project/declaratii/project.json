@@ -1,0 +1,41 @@
+{
+  "title": "Declarații de avere și de interese",
+  "short_title": "Declarații",
+  "summary": "Vrem să transcriem declarațiile",
+  "logo": "/images/logo.svg",
+  "background": "/images/background.jpg",
+  "admin_email": "lucian.ursu@code4.ro",
+  "team_emails": [
+    "alexandra.rusu@code4.ro"
+  ],
+
+  "team": [
+    {
+      "name": "Simba",
+      "role": "Lion",
+      "image": "http://placekitten.com/200/300",
+      "organization": "businesscat"
+    },
+    {
+      "name": "Butch Catsidy",
+      "role": "Cat",
+      "image": "http://placekitten.com/200/300",
+      "organization": "businesscat"
+    }
+  ],
+
+  "organizations": [
+    {
+     "title": "Business Cat",
+     "description": "Deficit? You've got to be kitten me",
+     "url":"http://businesscat.org",
+     "logo": "http://businesscat.org/logo.png"
+    }
+  ],
+
+  "forum": {
+    "type": "discourse",
+    "base_url": "http://catchat.biz"
+  }
+
+}

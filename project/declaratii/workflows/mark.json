@@ -1,0 +1,54 @@
+{
+  "name":"mark",
+  "label":"Marcarea declarației",
+  "retire_limit": 3,
+  "generates_subjects": true,
+  "generates_subjects_for": "transcribe",
+  "first_task":"pick_statement_type",
+  "tasks": {
+    "pick_statement_type": {
+      "tool": "pickOne",
+      "instruction": "Ce fel de declarație este?",
+      "tool_config": {
+        "options": [
+          {
+            "value": "wealth_statement",
+            "label": "Declarație de avere",
+            "next_task": "wealth_statement_task"
+          },
+	  {
+            "value": "interests_statement",
+            "label": "Declarație de interese",
+            "next_task": "interests_statement_task"
+ 	  } 
+        ]
+      }
+    },
+    "wealth_statement_task": {
+      "generates_subjects": true,
+      "tool": "pickOneMarkOne",
+      "instruction": "Alege o etichetă și desenează un dreptunghi în jurul secțiunii corespunzătoare din document.",
+      "tool_config": {
+        "tools": [
+          {"type": "rectangleTool", "label": "Nume", "color": "#373ACC", "generates_subject_type": "ws_name"},
+          {"type": "rectangleTool", "label": "Funcția", "color": "#373ACC", "generates_subject_type": "ws_position"},
+          {"type": "rectangleTool", "label": "Instituția", "color": "#373ACC", "generates_subject_type": "ws_institution"}
+        ]
+      },
+      "next_task": null
+    },
+    "interests_statement_task": {
+      "generates_subjects": true,
+      "tool": "pickOneMarkOne",
+      "instruction": "Alege o etichetă și desenează un dreptunghi în jurul secțiunii corespunzătoare din document.",
+      "tool_config": {
+        "tools": [
+          {"type": "rectangleTool", "label": "Nume", "color": "#373ACC", "generates_subject_type": "is_name"},
+          {"type": "rectangleTool", "label": "Funcția", "color": "#373ACC", "generates_subject_type": "is_position"},
+          {"type": "rectangleTool", "label": "Instituția", "color": "#373ACC", "generates_subject_type": "is_institution"}
+        ]
+      },
+      "next_task": null
+    }
+  }
+}
