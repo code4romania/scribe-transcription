@@ -1,2 +1,8 @@
-order,file_path,thumbnail,width,height
-1,https://s3-eu-west-1.amazonaws.com/catalogpolitic/samples/DA_2016-06-10_PONTA+VICTOR+VIOREL_70438189.png,,800,600
+order,file_path,thumbnail,width,height,set_key
+1,https://s3-eu-west-1.amazonaws.com/catalogpolitic/samples/DA_2016-06-10_PONTA+VICTOR+VIOREL_70438189.png,,800,600,set_1
+1,https://s3-eu-west-1.amazonaws.com/catalogpolitic/samples/DA_PONTA_VICTOR_VIOREL-1.png,,800,600,set_1
+2,https://s3-eu-west-1.amazonaws.com/catalogpolitic/samples/DA_PONTA_VICTOR_VIOREL-2.png,,800,600,set_1
+3,https://s3-eu-west-1.amazonaws.com/catalogpolitic/samples/DA_PONTA_VICTOR_VIOREL-3.png,,800,600,set_1
+4,https://s3-eu-west-1.amazonaws.com/catalogpolitic/samples/DA_PONTA_VICTOR_VIOREL-4.png,,800,600,set_1
+5,https://s3-eu-west-1.amazonaws.com/catalogpolitic/samples/DA_PONTA_VICTOR_VIOREL-5.png,,800,600,set_1
+6,https://s3-eu-west-1.amazonaws.com/catalogpolitic/samples/DA_PONTA_VICTOR_VIOREL-6.png,,800,600,set_1
