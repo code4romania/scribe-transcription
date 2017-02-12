@@ -90,3 +90,6 @@ dump
 
 # vagrant
 .vagrant
+
+# ansible external roles
+ansible/roles/ansible-*
