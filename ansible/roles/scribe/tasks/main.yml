@@ -1,0 +1,35 @@
+---
+- name: install .env file
+  template:
+    src: .env.j2
+    dest: "{{ site_deployment_path }}/.env"
+  become: yes
+  become_user: "{{ site_app_user }}"
+
+- name: install npm packages
+  npm:
+    path: "{{ site_deployment_path }}"
+    state: present
+    executable: "{{ node_bin_path }}/npm"
+  become: yes
+  become_user: "{{ site_app_user }}"
+
+- name: install gems
+  bundler:
+    state: present
+    chdir: "{{ site_deployment_path }}"
+    executable: "rvm {{ ruby_version }} do bundle"
+  environment:
+    PATH: "{{ ruby_env_PATH }}"
+  become: yes
+  become_user: "{{ site_app_user }}"
+
+- name: load project
+  command:
+     "{{ ruby_bundle_exec }} rake project:load['declaratii']"
+  args:
+    chdir: "{{ site_deployment_path }}"
+  environment:
+    PATH: "{{ node_bin_path }}:{{ ruby_env_PATH }}"
+  become: yes
+  become_user: "{{ site_app_user }}"
