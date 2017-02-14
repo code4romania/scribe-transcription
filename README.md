@@ -1,6 +1,43 @@
 > **Warning**
 > This project is experimental and not well supported.
 
+# Development Setup
+- Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- Install [Vagrant](https://www.vagrantup.com/downloads.html)
+- Install Ansible:
+  - on Linux:
+    ```bash
+    sudo apt-get install python-pip
+    sudo pip install ansible
+    ```
+
+  - on Mac:
+    ```bash
+    brew install ansible
+    ```
+  Or install `pip` and then run `pip install ansible`.
+- Install Ansible roles:
+    ```bash
+    ansible-galaxy install -r ansible/roles/external.yml
+    ```
+
+- Create the VM:
+    ```bash
+    vagrant up
+    ```
+
+You should have an environment with everything installed. To start the Rails
+server, you have to log into the VM:
+
+```bash
+vagrant ssh
+cd /vagrant
+rvm use 2.1.5
+bundle exec rails s
+```
+
+Access the site in your browser at http://localhost:8000.
+
 # Scribe 
 
 [Scribe](http://scribeproject.github.io/) is a framework for crowdsourcing the transcription of text-based documents, particularly documents that are not well suited for Optical Character Recognition. It is a collaboration between [Zooniverse](https://www.zooniverse.org/) and [The New York Public Library Labs](http://labs.nypl.org/) with generous support from [The National Endowment for the Humanities (NEH), Office of Digital Humanities](http://www.neh.gov/divisions/odh).
