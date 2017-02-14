@@ -1,0 +1,23 @@
+---
+- name: add repo key
+  apt_key:
+    keyserver: "hkp://keyserver.ubuntu.com:80"
+    id: 7F0CEB10
+    state: present
+  become: yes
+
+- name: add repo
+  apt_repository:
+    repo: "{{ mongo_repo }}"
+    update_cache: yes
+    state: present
+  become: yes
+
+# We use force=yes, because the packages aren't authenticated
+- name: install mongo
+  apt:
+    name: mongodb-org
+    force: yes
+    state: present
+  become: yes
+

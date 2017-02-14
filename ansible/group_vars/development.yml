@@ -1,0 +1,13 @@
+---
+
+node_user: "{{ site_app_user }}"
+node_version: 0.12.18
+
+ruby_user: "{{ site_app_user }}"
+ruby_version: 2.1.5
+
+site_deployment_path: /vagrant
+site_app_user: vagrant
+
+rails_devise_secret_token: be6a1a821a57c92919fdcb447bddca4c1600e1a8bc317e71e6a37ff17148cf4954d371da2a8f4699aaf4929ac5c7e86129b39711a9cbfdc0534f3e2c511c0d18
+rails_secret_key_base_token: f06678e5a55dfa21c7516ef520bd1238d80fd90bf6296940ff3551cd99c487f6c1c8c9433864bd31505a3fb407a7d34cd352e7d0fd59e05a05b2b138634946aa
